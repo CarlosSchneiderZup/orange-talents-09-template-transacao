@@ -1,6 +1,6 @@
 package com.zupproject.transacoes.compartilhados.utils;
 
-import com.zupproject.transacoes.entidades.EventoDeTransacao;
+import com.zupproject.transacoes.controllers.dtos.EventoDeTransacao;
 import com.zupproject.transacoes.entidades.Transacao;
 import com.zupproject.transacoes.repositorios.TransacaoRepository;
 import org.slf4j.Logger;

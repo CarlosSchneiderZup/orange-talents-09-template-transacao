@@ -12,6 +12,15 @@ public class Cartao {
         return id;
     }
 
+    public Cartao() {
+
+    }
+
+    public Cartao(String id, String email) {
+        this.id = id;
+        this.email = email;
+    }
+
     public String getEmail() {
         return email;
     }

@@ -1,5 +1,7 @@
 package com.zupproject.transacoes.entidades;
 
+import com.zupproject.transacoes.controllers.dtos.EventoDeTransacao;
+import com.zupproject.transacoes.controllers.dtos.TransacaoDto;
 import com.zupproject.transacoes.entidades.acoplamentos.Cartao;
 import com.zupproject.transacoes.entidades.acoplamentos.Estabelecimento;
 
@@ -17,12 +19,17 @@ public class Transacao {
     private BigDecimal valor;
     @Embedded
     private Estabelecimento estabelecimento;
+    @AttributeOverrides(
+            @AttributeOverride(name = "id",
+                    column = @Column(name = "id_cartao"))
+    )
     @Embedded
     private Cartao cartao;
     private LocalDateTime efetivadaEm;
 
     @Deprecated
-    public Transacao() {}
+    public Transacao() {
+    }
 
     private Transacao(EventoDeTransacao evento) {
         this.idTransacao = evento.getId();
@@ -34,5 +41,9 @@ public class Transacao {
 
     public static Transacao montaTransacao(EventoDeTransacao eventoDeTransacao) {
         return new Transacao(eventoDeTransacao);
+    }
+
+    public TransacaoDto montaTransacaoDto() {
+        return new TransacaoDto(idTransacao, valor, estabelecimento.getNome(), efetivadaEm);
     }
 }

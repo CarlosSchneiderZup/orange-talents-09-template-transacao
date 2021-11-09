@@ -1,6 +1,6 @@
 package com.zupproject.transacoes.compartilhados.configuracoes;
 
-import com.zupproject.transacoes.entidades.EventoDeTransacao;
+import com.zupproject.transacoes.controllers.dtos.EventoDeTransacao;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
