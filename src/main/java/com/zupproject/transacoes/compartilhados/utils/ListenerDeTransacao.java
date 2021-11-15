@@ -31,6 +31,5 @@ public class ListenerDeTransacao {
             logger.error(e.getMessage());
             logger.error("Ocorrido em: " + LocalDateTime.now());
         }
-
     }
 }

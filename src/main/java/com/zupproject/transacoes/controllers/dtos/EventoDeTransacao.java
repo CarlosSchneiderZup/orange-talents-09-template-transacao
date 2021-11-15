@@ -13,6 +13,8 @@ public class EventoDeTransacao {
     private Cartao cartao;
     private String efetivadaEm;
 
+    public EventoDeTransacao() {}
+
     public EventoDeTransacao(String id, BigDecimal valor, Estabelecimento estabelecimento, Cartao cartao, String efetivadaEm) {
         this.id = id;
         this.valor = valor;
